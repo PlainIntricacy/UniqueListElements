@@ -8,16 +8,12 @@ public class Main {
         System.out.println("Please enter the list of integers:");
         String[] parts = input.nextLine().split(",");
         input.close();
-        List<String> nums = new ArrayList<String>();
-        for (String i : parts) {
-            nums.add(i);
-        }
         List<String> finaList = new ArrayList<String>();
         HashSet<String> hset = new HashSet<String>();
-        for(String i:nums){
-            if(!hset.contains(i)){
-                finaList.add(i);
-                hset.add(i);
+        for(int i=0; i<parts.length; i++){
+            if(!hset.contains(parts[i])){
+                finaList.add(parts[i]);
+                hset.add(parts[i]);
             }
         }
         finaList.sort(new Comparator<String>() {
